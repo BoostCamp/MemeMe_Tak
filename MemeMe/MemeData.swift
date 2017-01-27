@@ -13,5 +13,5 @@ struct MemeData {
     let topText: String
     let bottomText: String
     let originImage: UIImage
-    let changedImage: UIImage
+    let memeImage: UIImage
 }
