@@ -1,5 +1,5 @@
 //
-//  SentMemesDetailViewController.swift
+//  MemeDetailViewController.swift
 //  MemeMe
 //
 //  Created by 진형탁 on 2017. 1. 27..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesDetailViewController: UIViewController {
+class MemeDetailViewController: UIViewController {
     
     // MARK: Property
     @IBOutlet weak var sentMemesImageView: UIImageView?

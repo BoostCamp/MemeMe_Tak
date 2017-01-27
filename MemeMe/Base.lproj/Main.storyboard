@@ -275,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="-652" y="357.57121439280365"/>
         </scene>
-        <!--Sent Memes Detail View Controller-->
+        <!--Meme Detail View Controller-->
         <scene sceneID="wqS-cN-wXc">
             <objects>
-                <viewController id="Nvn-ev-91R" customClass="SentMemesDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nvn-ev-91R" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1ZY-RN-psA"/>
                         <viewControllerLayoutGuide type="bottom" id="ePn-Cy-5oZ"/>
