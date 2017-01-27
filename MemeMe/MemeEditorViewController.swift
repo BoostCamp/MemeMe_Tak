@@ -1,5 +1,5 @@
 //
-//  EditorViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by 진형탁 on 2017. 1. 27..
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class EditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    // MARK: Property
     @IBOutlet weak var memeNavigationBar: UINavigationBar!
     @IBOutlet weak var memeToolbar: UIToolbar!
     
@@ -37,7 +38,6 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         imagePicker.delegate = self
         
         configure(textfield: topTextField)
@@ -51,7 +51,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Subscribe to keyboard notifications to allow the view to raise when necessary
+        // Subscribe to keyboard notifications
         subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
     }
@@ -61,7 +61,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         unsubscribeFromKeyboardNotifications()
     }
     
-     // MARK: View interface
+    // MARK: View interface
     @IBAction func actionButtonPressed(_ sender: AnyObject) {
         currentMemeImage = generateMemedImage()
         let activityVC = UIActivityViewController.init(activityItems: [currentMemeImage], applicationActivities: nil)
@@ -156,15 +156,15 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     // MARK: Create Meme object functions
     func saveMeme() {
         //Create the meme
-        let meme = MemeData(topText: topTextField.text!, bottomText: bottomTextField.text!, originImage: memeImageView.image!, memeImage: currentMemeImage)
+        let meme = MemeData(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memeImage: currentMemeImage)
         
-        // Add it to the memeDatas array in the Application Delegate
+        // Add to the memeDatas array in the Application Delegate
         (UIApplication.shared.delegate as! AppDelegate).memeDatas.append(meme)
     }
     
     // Create a UIImage that combines the Image View and the Textfields
     func generateMemedImage() -> UIImage {
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and navbar
         configureBars(hidden: true)
         
         // render view to an image
@@ -173,7 +173,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar
+        // Show toolbar and navbar
         configureBars(hidden: false)
         
         return memedImage

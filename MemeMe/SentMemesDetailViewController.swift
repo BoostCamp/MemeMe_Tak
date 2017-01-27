@@ -1,18 +1,20 @@
 //
 //  SentMemesDetailViewController.swift
-//  MemeMe 2.0
+//  MemeMe
 //
-//  Created by Peter Khotpanya on 10/28/16.
-//  Copyright © 2016 Peter Khotpanya. All rights reserved.
+//  Created by 진형탁 on 2017. 1. 27..
+//  Copyright © 2017년 boostcamp. All rights reserved.
 //
 
 import UIKit
 
 class SentMemesDetailViewController: UIViewController {
     
+    // MARK: Property
     @IBOutlet weak var sentMemesImageView: UIImageView?
     weak var memeImage: UIImage?
 
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         sentMemesImageView?.image = memeImage
