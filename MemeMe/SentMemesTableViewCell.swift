@@ -13,6 +13,7 @@ class SentMemesTableViewCell: UITableViewCell {
 
     // MARK: Property
     @IBOutlet weak var sentMemesImageView: UIImageView!
-    @IBOutlet weak var sentMemesLabel: UILabel!
+    @IBOutlet weak var sentMemesTop: UILabel!
 
+    @IBOutlet weak var sentMemesBottom: UILabel!
 }
